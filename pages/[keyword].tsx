@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { KeywordData } from '../lib/schema'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import clientPromise from '../lib/mongo'
+import { ParsedUrlQuery } from 'querystring'
 
 const COUPANG_HOME_URL = "https://link.coupang.com/a/Jgahp"
 
@@ -22,6 +24,8 @@ export default function DetailPage({hasRecommendation, keyword, keywordData} : {
       link = keywordData?.recommendedItem?.affliateUrl
     }
   }
+  const imgWidth = 300
+  const imgHeight = 300
   
   return (
     <>
@@ -31,43 +35,64 @@ export default function DetailPage({hasRecommendation, keyword, keywordData} : {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
       <body>
         <main className={styles.main}>
-          {
-            !hasRecommendation && 
-              <h2>현재 해당 키워드에 대한 추천 아이템이 없습니다. 
-                선정이 완료되는 대로 업데이트 하도록 하겠습니다. 감사합니다</h2>
-          }
-          {
-            keywordData && 
-              <div>
-                <h1> R이 추천하는 {keyword}</h1>
-                <Link href={link}>
-                  <div id="recommendedItem">
-                    <img src={keywordData.recommendedItem?.imageUrl}/>
-                    <h2>{keywordData.recommendedItem?.title}</h2>
-                    <h3>
-                      {keywordData.recommendedItem?.discountedPrice
-                      ? keywordData.recommendedItem?.discountedPrice
-                      : keywordData.recommendedItem?.originalPrice}
-                    </h3>
-                    쇼핑하기
-                  </div>
-                </Link>
-              </div>
-          }
+          <div>
+            <h2>
+              {
+                !hasRecommendation && 
+                  "현재 해당 키워드에 대한 추천 아이템이 없습니다. 선정이 완료되는 대로 업데이트 하도록 하겠습니다. 감사합니다"
+              }
+            </h2>
+          </div>
+          <div>
+            {
+              keywordData && 
+                <div>
+                  <h1> R이 추천하는 {keyword}</h1>
+                  <Link href={link}>
+                    <div id="recommendedItem">
+                      <Image 
+                      src={keywordData.recommendedItem?.imageUrl} 
+                      width={imgWidth}
+                      height={imgHeight}
+                      alt="recommended item image"
+                      unoptimized/>
+                      <h2>{keywordData.recommendedItem?.title}</h2>
+                      <h3>
+                        {keywordData.recommendedItem?.discountedPrice
+                        ? keywordData.recommendedItem?.discountedPrice
+                        : keywordData.recommendedItem?.originalPrice}
+                      </h3>
+                      쇼핑하기
+                    </div>
+                  </Link>
+                </div>
+            }
+          </div>
         </main>
-        <p>
+        <div>
           <h6>
             이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
           </h6>
-        </p>
+        </div>
       </body>
     </>
   )
 }
 
-export const getStaticPaths:GetStaticPaths = async () => { 
+type Props = {
+  hasRecommendation: boolean,
+  keyword: string,
+  keywordData: KeywordData | null,  
+}
+
+interface Params extends ParsedUrlQuery {
+  keyword: string,
+}
+
+export const getStaticPaths:GetStaticPaths<Params> = async () => { 
   const paths = await getPrerenderingKeywords()
   console.log(paths)
   return {
@@ -76,12 +101,8 @@ export const getStaticPaths:GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps:GetStaticProps = async ({params}: {
-  params: {
-    keyword: string
-  }
-}) => {
-  const keyword = params.keyword
+export const getStaticProps:GetStaticProps<Props, Params> = async (context) => {
+  const keyword = context.params!.keyword
   const keywordData: KeywordData | null = await getKeywordData(keyword)
   
   if (!keywordData) {
