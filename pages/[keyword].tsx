@@ -1,28 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { KeywordData } from '../lib/schema'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import clientPromise from '../lib/mongo'
 
-type Item = {
-  title: string
-  original_url: string,
-  affliate_url: string,
-  original_price: number,
-  discounted_price: number,
-  image_url: string,
-  rating: {
-    total_count: number,
-    avg_rating:number,
-    ratings:{},
-  }
-}
-
-type KeywordData = {
-  keyword: string,
-  pre_render: boolean,
-  recommended_item:Item
-  searched_items: [Item],
-}
-
-export default function DetailPage({keywordData} : {
+export default function DetailPage({hasRecommendation, keyword, keywordData} : {
+  hasRecommendation: boolean
+  keyword: string
   keywordData: KeywordData
 }) {
   return (
@@ -44,3 +28,58 @@ export default function DetailPage({keywordData} : {
   )
 }
 
+export const getStaticPaths:GetStaticPaths = async () => { 
+  return {
+    paths: [],
+    fallback: true
+  }
+}
+
+export const getStaticProps:GetStaticProps = async ({params}: {
+  params: {
+    keyword: string
+  }
+}) => {
+  const keyword = params.keyword
+
+  const keywordData: KeywordData | null = await getKeywordData(keyword)
+
+  if (!keywordData) {
+    // direct to found no recommendation  page
+    return {
+      hasRecommendation: false,
+      keyword: keyword,
+      keywordData: null,
+    }
+  }
+  return {
+    props: {
+      hasRecommendation: true,
+      keyword: keyword,
+      keywordData,
+    }
+  }
+}
+
+const getKeywordData = async (keyword: string): Promise<KeywordData | null> => {
+  const client = await clientPromise
+  const db = client.db('recommendation-best')
+  const collection = db.collection('keywords')
+
+  const data = await collection.findOne({keyword: keyword})
+  
+  if (!data) {
+    return null
+  }
+  const pre_render = data.pre_render
+  const recommended_item = data.recommended_item
+  const searched_items = data.searched_items
+
+  const keywordData:KeywordData = {
+    keyword,
+    pre_render,
+    recommended_item,
+    searched_items
+  }
+  return keywordData
+}
