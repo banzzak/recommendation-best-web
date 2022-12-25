@@ -9,8 +9,8 @@ export type Item = {
   title: string
   originalUrl: string,
   affliateUrl: string,
-  originalPrice: number,
-  discountedPrice: number,
+  finalPrice: number,
+  basePrice: number,
   imageUrl: string,
   rating: {
     totalCount: number,
