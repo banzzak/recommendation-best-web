@@ -61,7 +61,7 @@ export default function DetailPage({hasRecommendation, keyword, keywordData} : {
                       unoptimized/>
                       <h2>{keywordData.recommendedItem?.title}</h2>
                       <h3>
-                        {keywordData.recommendedItem?.finalPrice}
+                        {keywordData.recommendedItem?.finalPrice} 원
                       </h3>
                       쇼핑하기
                     </div>
