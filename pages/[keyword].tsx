@@ -61,9 +61,7 @@ export default function DetailPage({hasRecommendation, keyword, keywordData} : {
                       unoptimized/>
                       <h2>{keywordData.recommendedItem?.title}</h2>
                       <h3>
-                        {keywordData.recommendedItem?.discountedPrice
-                        ? keywordData.recommendedItem?.discountedPrice
-                        : keywordData.recommendedItem?.originalPrice}
+                        {keywordData.recommendedItem?.finalPrice}
                       </h3>
                       쇼핑하기
                     </div>
