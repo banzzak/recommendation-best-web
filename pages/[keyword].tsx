@@ -92,6 +92,7 @@ interface Params extends ParsedUrlQuery {
 
 export const getStaticPaths:GetStaticPaths<Params> = async () => { 
   const paths = await getPrerenderingKeywords()
+  console.log("Pre-rendering keywords:")
   console.log(paths)
   return {
     paths,
@@ -137,20 +138,15 @@ const getPrerenderingKeywords = async (): Promise<{
       keyword: item.keyword
     }
   }))
-  console.log("Pre-rendering keywords: ", preRenderingKeywordsPaths)
   return preRenderingKeywordsPaths
 }
 
 const getKeywordData = async (keyword: string): Promise<KeywordData | null> => {
-  console.log("keyword:")
-  console.log(keyword)
   const client = await clientPromise
   const db = client.db('recommendation-best')
   const collection = db.collection('keywords')
 
   const data = await collection.findOne({keyword: keyword})
-  console.log('data :')
-  console.log(data)
   if (!data) {
     return null
   }
