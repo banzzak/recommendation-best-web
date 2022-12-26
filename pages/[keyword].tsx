@@ -137,6 +137,7 @@ const getPrerenderingKeywords = async (): Promise<{
       keyword: item.keyword
     }
   }))
+  console.log("Pre-rendering keywords: ", preRenderingKeywordsPaths)
   return preRenderingKeywordsPaths
 }
 
