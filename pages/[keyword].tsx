@@ -20,8 +20,8 @@ export default function DetailPage({hasRecommendation, keyword, keywordData} : {
     if (keywordData?.recommendedItem?.originalUrl) {
       link = keywordData?.recommendedItem?.originalUrl
     }
-    if (keywordData?.recommendedItem?.affliateUrl) {
-      link = keywordData?.recommendedItem?.affliateUrl
+    if (keywordData?.recommendedItem?.affiliateUrl) {
+      link = keywordData?.recommendedItem?.affiliateUrl
     }
   }
   const imgWidth = 300

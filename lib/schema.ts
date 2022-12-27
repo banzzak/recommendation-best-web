@@ -8,7 +8,7 @@ export type KeywordData = {
 export type Item = {
   title: string
   originalUrl: string,
-  affliateUrl: string,
+  affiliateUrl: string,
   finalPrice: number,
   basePrice: number,
   imageUrl: string,
