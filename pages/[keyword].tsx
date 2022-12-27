@@ -95,6 +95,10 @@ export const getStaticPaths:GetStaticPaths<Params> = async () => {
   console.log("Pre-rendering keywords:")
   console.log(paths)
   return {
+    paths: [],
+    fallback: 'blocking'
+  }
+  return {
     paths,
     fallback: 'blocking'
   }
