@@ -55,10 +55,10 @@ export default function DetailPage({hasSearchResult, keyword, recommendedKeyword
                     </div>
                   </div>
                 </div>
-                <div className={styles.rectangleParent}>
+                {recommendedKeywordData && <div className={styles.rectangleParent}>
                   <div className={styles.frameChild} />
                   <div className={styles.div1}>이건 어때요?</div>
-                </div>
+                </div>}
               </div>
               {recommendedKeywordData && <div className={styles.s1}>
                 <div className={styles.rParent}>
