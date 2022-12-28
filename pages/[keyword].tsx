@@ -63,7 +63,7 @@ export default function DetailPage({hasSearchResult, keyword, recommendedKeyword
                   <div className={styles.r}>
                     <img className={styles.rChild} alt="" src="../frame-762.svg" />
                   </div>
-                  <div className={styles.div2}>이 추천하는 \"{keyword}\"</div>
+                  <div className={styles.div2}>이 추천하는 `\"`{keyword}`\"`</div>
                 </div>
                 <Link href={link}>
                   <div className={styles.productCard}>
