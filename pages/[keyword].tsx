@@ -149,6 +149,10 @@ export const getStaticPaths:GetStaticPaths<Params> = async () => {
     fallback: 'blocking'
   }
   return {
+    paths: [],
+    fallback: 'blocking'
+  }
+  return {
     paths,
     fallback: 'blocking'
   }
