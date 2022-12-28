@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Head from 'next/head'
 import Link from 'next/link'
 import { ParsedUrlQuery } from 'querystring'
@@ -6,7 +8,6 @@ import styles from "../styles/DetailPage.module.css";
 import { KeywordData } from '../lib/schema'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import clientPromise from '../lib/mongo'
-import React from 'react';
 
 const COUPANG_HOME_URL = "https://link.coupang.com/a/Jgahp"
 
