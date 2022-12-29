@@ -146,6 +146,7 @@ interface Params extends ParsedUrlQuery {
 
 export const getStaticPaths:GetStaticPaths<Params> = async () => { 
   const paths = await getPrerenderingKeywords()
+  paths.push({params: {keyword: 'NoSearchResult'}})
   return {
     paths: [],
     fallback: 'blocking'
