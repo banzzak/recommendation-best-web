@@ -12,6 +12,7 @@ import clientPromise from '../lib/mongo'
 const COUPANG_HOME_URL = "https://link.coupang.com/a/Jgahp"
 
 export default function DetailPage({hasSearchResult, keyword, recommendedKeywordData} : Props) {
+  const title = `${keyword} 추천 상품`
   const metaDescription = `베스트 ${keyword} 쇼핑 추천`
   let link = COUPANG_HOME_URL
   if (recommendedKeywordData) {
@@ -29,7 +30,7 @@ export default function DetailPage({hasSearchResult, keyword, recommendedKeyword
   return (
     <>
       <Head>
-        <title><span> {keyword} 추천 </span></title>
+        <title>{title}</title>
         <meta name="description" content={metaDescription}/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
