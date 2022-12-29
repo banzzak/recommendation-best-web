@@ -1,7 +1,6 @@
-import React from 'react';
-
 import Head from 'next/head'
 import Link from 'next/link'
+import { NextPage } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import SearchBar from "../components/search-bar";
 import styles from "../styles/DetailPage.module.css";
@@ -11,7 +10,7 @@ import clientPromise from '../lib/mongo'
 
 const COUPANG_HOME_URL = "https://link.coupang.com/a/Jgahp"
 
-export default function DetailPage({hasSearchResult, keyword, recommendedKeywordData} : Props) {
+const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywordData}) => {
   const title = `베스트 ${keyword} 추천`
   const metaDescription = `베스트 ${keyword} 쇼핑 추천 상품`
   let link = COUPANG_HOME_URL
@@ -33,7 +32,6 @@ export default function DetailPage({hasSearchResult, keyword, recommendedKeyword
         <title>{title}</title>
         <meta name="description" content={metaDescription}/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       
       <body>
@@ -114,11 +112,11 @@ export default function DetailPage({hasSearchResult, keyword, recommendedKeyword
                     <div
                       className={styles.div7}
                     >{`단 한 가지를 추천해드립니다. `}</div>
-                    <div className={styles.div8}>최상의 상품</div>
+                    <div className={styles.div8}>최고의 상품</div>
                   </div>
                   <button className={styles.button1}>
                     <div className={styles.rWrapper}>
-                      <div className={styles.r1}>R. 회사 소개</div>
+                      <div className={styles.r1}>R 회사 소개</div>
                     </div>
                   </button>
                 </div>
@@ -220,3 +218,5 @@ const getKeywordData = async (keyword: string): Promise<KeywordData | null> => {
   }
   return keywordData
 }
+
+export default DetailPage;
