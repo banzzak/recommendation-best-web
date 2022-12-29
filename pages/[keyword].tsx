@@ -144,12 +144,14 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticPaths:GetStaticPaths<Params> = async () => { 
+  if (!process.env.PRERENDERING_ENABLED) {
+    return {
+      paths: [],
+      fallback: 'blocking'
+    }
+  }
   const paths = await getPrerenderingKeywords()
   paths.push({params: {keyword: 'NoSearchResult'}})
-  return {
-    paths: [],
-    fallback: 'blocking'
-  }
   return {
     paths,
     fallback: 'blocking'
