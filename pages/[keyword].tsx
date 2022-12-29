@@ -12,8 +12,8 @@ import clientPromise from '../lib/mongo'
 const COUPANG_HOME_URL = "https://link.coupang.com/a/Jgahp"
 
 export default function DetailPage({hasSearchResult, keyword, recommendedKeywordData} : Props) {
-  const title = `${keyword} 추천 상품`
-  const metaDescription = `베스트 ${keyword} 쇼핑 추천`
+  const title = `베스트 ${keyword} 추천`
+  const metaDescription = `베스트 ${keyword} 쇼핑 추천 상품`
   let link = COUPANG_HOME_URL
   if (recommendedKeywordData) {
     if (recommendedKeywordData?.recommendedItem?.originalUrl) {
