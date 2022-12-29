@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;600&display=swap");
 
 body {
   margin: 0;
@@ -8,7 +7,6 @@ body {
 :root {
   /* fonts */
   --rb-heading3: Inter;
-  --font-sf-pro-text: "SF Pro Text";
 
   /* font sizes */
   --rb-footnote-size: 12px;
