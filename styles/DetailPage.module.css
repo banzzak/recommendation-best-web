@@ -339,3 +339,8 @@
   color: var(--color-gray-400);
   font-family: var(--rb-heading3);
 }
+.narrowScreen {  
+  position: relative;
+  margin: auto;
+  width: 360px;  
+}
