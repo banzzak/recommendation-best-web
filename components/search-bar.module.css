@@ -9,7 +9,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 112px;
+  height: 68px;
   display: flex;
   flex-direction: row;
   padding: var(--padding-2xl) var(--padding-xs) var(--padding-md);
