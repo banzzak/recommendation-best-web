@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { NextPage } from 'next'
 import { ParsedUrlQuery } from 'querystring'
-import SearchBar from "../components/search-bar";
+import NavigationBar from "../components/navigation-bar";
 import styles from "../styles/DetailPage.module.css";
 import { KeywordData } from '../lib/schema'
 import { GetStaticPaths, GetStaticProps } from 'next'
@@ -125,7 +125,7 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
               </div>
               <div className={styles.header}>
                 <div className={styles.headerChild} />
-                <SearchBar />
+                <NavigationBar />
               </div>
             </div>
           </div>               
