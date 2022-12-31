@@ -8,7 +8,8 @@ import { useRouter } from 'next/router'
 
 declare global {
   interface Window {
-    scrollTo: (options: ScrollToOptions) => void;
+    scrollTo(options?: ScrollToOptions): void;
+    scrollTo(x: number, y: number): void;
   }
 }
 
