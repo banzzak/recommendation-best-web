@@ -1,7 +1,16 @@
 import type { NextPage } from "next";
+import { useRouter } from 'next/router'
 import styles from "../styles/AboutUs.module.css";
 
 const AboutUs: NextPage = () => {
+  const router = useRouter();
+
+  function handleButtonClick() {
+    router.push({
+      pathname: '/',
+    });
+  }
+
   return (
     <div className={styles.aboutus}>
       <div className={styles.value}>VALUE</div>
@@ -58,7 +67,9 @@ const AboutUs: NextPage = () => {
       </div>
       <button className={styles.button}>
         <div className={styles.frame}>
-          <div className={styles.div3}>추천 상품 검색하기</div>
+          <div className={styles.div3} onClick={handleButtonClick}>
+            추천 상품 검색하기
+          </div>
         </div>
       </button>
       <div className={styles.frameDiv}>
@@ -77,7 +88,7 @@ const AboutUs: NextPage = () => {
       <div className={styles.wrapper2}>
         <div className={styles.div2}>누가 나 대신 검색해서 알려줬으면 ...</div>
       </div>
-      <button className={styles.button1}>
+      <button className={styles.button1} onClick={handleButtonClick}>
         <div className={styles.frame}>
           <div className={styles.div7}>지금 바로 추천 받기</div>
         </div>
