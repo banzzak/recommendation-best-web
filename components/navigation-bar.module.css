@@ -23,7 +23,9 @@
 }
 
 .transparentButton {
-  display: none;
+  position: absolute;
+  right: 0px;
+  top: 41%;
   border: none;
   background: none;
   width: 0px;
