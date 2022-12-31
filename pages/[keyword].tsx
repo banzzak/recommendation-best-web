@@ -131,7 +131,6 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
               </div>
               <div className={styles.header}>
                 <div className={styles.headerChild} />
-                <SearchBar />
               </div>
             </div>
           </div>               
