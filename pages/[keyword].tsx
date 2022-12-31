@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { ParsedUrlQuery } from 'querystring'
 import SearchBar from "../components/search-bar";
 import styles from "../styles/DetailPage.module.css";
@@ -11,6 +12,11 @@ import clientPromise from '../lib/mongo'
 const COUPANG_HOME_URL = "https://link.coupang.com/a/Jgahp"
 
 const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywordData}) => {
+  const router = useRouter();
+  const handleClickAbout = () => {
+    router.push('/about')
+  }
+  
   const title = `베스트 ${keyword} 추천`
   const metaDescription = `베스트 ${keyword} 쇼핑 추천 상품`
   let link = COUPANG_HOME_URL
@@ -115,7 +121,7 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
                       >{`단 한 가지를 추천해드립니다. `}</div>
                       <div className={styles.div8}>최고의 상품</div>
                     </div>
-                    <button className={styles.button1}>
+                    <button className={styles.button1} onClick={handleClickAbout}>
                       <div className={styles.rWrapper}>
                         <div className={styles.r1}>R 회사 소개</div>
                       </div>

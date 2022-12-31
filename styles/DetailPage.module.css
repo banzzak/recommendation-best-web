@@ -95,8 +95,7 @@
   flex-shrink: 0;
   object-fit: cover;
 }
-.div3,
-.div4 {
+.div3, .div4 {
   position: relative;
   display: inline-block;
   width: 280px;
@@ -181,7 +180,7 @@
   width: 328px;
   height: 545px;
   flex-shrink: 0;
-  color: var(--color-gray-200);
+  color: var(--color-gray-300);
 }
 .s1 {
   display: flex;
@@ -297,7 +296,7 @@
   justify-content: flex-start;
   gap: var(--gap-xl);
   font-size: var(--rb-body-bold-size);
-  color: var(--color-gray-200);
+  color: var(--color-gray-300);
 }
 .footer {
   position: relative;
