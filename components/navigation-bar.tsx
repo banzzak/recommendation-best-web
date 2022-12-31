@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import styles from "./search-bar.module.css";
+import styles from "./navigation-bar.module.css";
 
-const SearchBar: NextPage = () => {
+const NavigationBar: NextPage = () => {
   return (
     <div className={styles.icroundArrowBackIosParent}>
       <img
@@ -18,4 +18,4 @@ const SearchBar: NextPage = () => {
   );
 };
 
-export default SearchBar;
+export default NavigationBar;
