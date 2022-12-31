@@ -33,6 +33,9 @@ const NavigationBar: NextPage = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (typeof window !== 'undefined') {
+        document.querySelector('html').style.transform = 'scale(1)';
+      }
     }
   }, []);
 
