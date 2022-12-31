@@ -13,6 +13,8 @@ const AboutUs: NextPage = () => {
 
   return (
     <div className={styles.aboutus}>
+      <div className={styles.narrowScreen}>
+
       <div className={styles.value}>VALUE</div>
       <div className={styles.aboutusInner}>
         <div className={styles.groupParent}>
@@ -110,6 +112,7 @@ const AboutUs: NextPage = () => {
       </div>
       <div className={styles.r7}>
         <img className={styles.rInner} alt="" src="../frame-7622.svg" />
+      </div>
       </div>
     </div>
   );

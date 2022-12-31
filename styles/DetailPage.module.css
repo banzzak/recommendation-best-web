@@ -327,6 +327,11 @@
   width: 360px;
   height: 68px;
 }
+.narrowScreen {  
+  position: relative;
+  margin: auto;
+  width: 360px;  
+}
 .movetonextjs {
   position: relative;
   background-color: var(--bg);
@@ -338,8 +343,4 @@
   color: var(--color-gray-400);
   font-family: var(--rb-heading3);
 }
-.narrowScreen {  
-  position: relative;
-  margin: auto;
-  width: 360px;  
-}
+

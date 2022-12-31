@@ -351,6 +351,11 @@
   align-items: center;
   justify-content: flex-start;
 }
+.narrowScreen {  
+  position: relative;
+  margin: auto;
+  width: 360px;  
+}
 .aboutus {
   position: relative;
   background-color: var(--bg);
