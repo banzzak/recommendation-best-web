@@ -1,18 +1,21 @@
+import styles from "../styles/DetailPage.module.css";
+
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { ParsedUrlQuery } from 'querystring'
 import NavigationBar from "../components/navigation-bar";
-import styles from "../styles/DetailPage.module.css";
+
 import { KeywordData } from '../lib/schema'
-import { GetStaticPaths, GetStaticProps } from 'next'
 import clientPromise from '../lib/mongo'
 
 const COUPANG_HOME_URL = "https://link.coupang.com/a/Jgahp"
 
 const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywordData}) => {
   const router = useRouter();
+  const inputRef = useRef();
   const handleClickAbout = () => {
     router.push('/about')
   }
