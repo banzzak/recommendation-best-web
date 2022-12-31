@@ -2,13 +2,14 @@ import styles from "./navigation-bar.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
+import React from "react";
 import type { NextPage } from "next";
 import { useRouter } from 'next/router'
 
 const NavigationBar: NextPage = () => {
   const router = useRouter();
   
-  const onSearch = (event) => {
+  const onSearch = (event: React.FormEvent<HTMLFormElement>) => {
     console.log("search called");
     // Stop the form from submitting and refreshing the page.
     event.preventDefault()
