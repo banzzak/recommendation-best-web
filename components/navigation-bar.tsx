@@ -14,7 +14,7 @@ const NavigationBar: NextPage = () => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault()
 
-    const searchQuery = event.target.searchQuery.value;
+    const searchQuery = event.currentTarget.searchQuery.value;
     if (searchQuery) {
       router.push(`/${searchQuery}`);
     }  
