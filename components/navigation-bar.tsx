@@ -10,7 +10,6 @@ const NavigationBar: NextPage = () => {
   const router = useRouter();
   
   const onSearch = (event: React.FormEvent<HTMLFormElement>) => {
-    console.log("search called");
     // Stop the form from submitting and refreshing the page.
     event.preventDefault()
 
