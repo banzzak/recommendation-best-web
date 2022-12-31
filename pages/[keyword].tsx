@@ -15,7 +15,6 @@ const COUPANG_HOME_URL = "https://link.coupang.com/a/Jgahp"
 
 const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywordData}) => {
   const router = useRouter();
-  const inputRef = useRef();
   const handleClickAbout = () => {
     router.push('/about')
   }
