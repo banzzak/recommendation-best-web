@@ -1,0 +1,73 @@
+.div,
+.div1 {
+  position: absolute;
+  left: 0;
+  line-height: 152%;
+}
+.div {
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  width: 220px;
+}
+.div1 {
+  bottom: 24px;
+  font-weight: 900;
+  display: inline-block;
+  width: 86.87px;
+}
+.div2,
+.parent {
+  position: relative;
+  flex-shrink: 0;
+}
+.parent {
+  width: 220px;
+  height: 48px;
+}
+.div2 {
+  font-size: var(--rb-body-bold-size);
+  line-height: 152%;
+  font-family: var(--rb-body-bold1);
+  color: var(--bg);
+  text-align: center;
+  display: inline-block;
+  width: 158px;
+}
+.wrapper {
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.button,
+.whatisprojectr {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs) var(--padding-2xs);
+  background-color: var(--black);
+  border-radius: var(--br-md);
+  width: 280px;
+  justify-content: center;
+}
+.whatisprojectr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), transparent);
+  padding: var(--padding-3xl) var(--padding-lg);
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--rb-body-bold-size);
+  color: var(--color-gray-300);
+  font-family: var(--rb-body-bold1);
+}

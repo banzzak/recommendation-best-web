@@ -1,0 +1,44 @@
+.recommendationbestallReserv {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  opacity: 0.4;
+}
+.p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.p1 {
+  margin: 0;
+}
+.div {
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.4;
+}
+.recommendationbestallReservParent {
+  position: relative;
+  width: 249px;
+  height: 55px;
+  flex-shrink: 0;
+}
+.footer {
+  position: absolute;
+  top: 284px;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), transparent);
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-xl) var(--padding-yl);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: var(--rb-footnote-size);
+  color: var(--black);
+  font-family: var(--rb-body-bold1);
+}
