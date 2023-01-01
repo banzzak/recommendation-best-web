@@ -154,7 +154,8 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticPaths:GetStaticPaths<Params> = async () => { 
-  if (!process.env.PRERENDERING_ENABLED) {
+  if (!process.env.PRERENDERING_ENABLED || 
+    process.env.PRERENDERING_ENABLED.toLowerCase() === 'false') {
     return {
       paths: [],
       fallback: 'blocking'
