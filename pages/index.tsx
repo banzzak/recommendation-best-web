@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
 import Footer from "../components/footer";
 import WhatIsProjectR from "../components/what-is-project-r";
-import styles from "../styles/index.module.css";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
+    <div className={styles.narrowScreen}>
     <div className={styles.home}>
       <img
         className={styles.untitledArtwork81}
@@ -50,6 +51,7 @@ const Home: NextPage = () => {
           placeholder="쇼핑 키워드를 검색해보세요"
         />
       </div>
+    </div>
     </div>
   );
 };

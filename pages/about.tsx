@@ -12,9 +12,8 @@ const AboutUs: NextPage = () => {
   }
 
   return (
-    <div className={styles.aboutus}>
-      <div className={styles.narrowScreen}>
-
+    <div className={styles.narrowScreen}>
+      <div className={styles.aboutus}>
       <div className={styles.value}>VALUE</div>
       <div className={styles.aboutusInner}>
         <div className={styles.groupParent}>

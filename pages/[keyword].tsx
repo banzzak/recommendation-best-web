@@ -61,8 +61,8 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
       
       <body>
         <main className={styles.main}>
-          <div className={styles.movetonextjs}>
-            <div className={styles.narrowScreen}>
+          <div className={styles.narrowScreen}>
+            <div className={styles.movetonextjs}>
               <div className={styles.searchresult}>
                 <div id="noKeywordDiv" className={styles.nokeyword} style={{ display: !hasSearchResult ? 'block' : 'none' }}>
                   <div className={styles.nokeywordInner}>
