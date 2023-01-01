@@ -5,6 +5,7 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { ParsedUrlQuery } from 'querystring'
 import NavigationBar from "../components/navigation-bar";
 
@@ -13,8 +14,25 @@ import clientPromise from '../lib/mongo'
 
 const COUPANG_HOME_URL = "https://link.coupang.com/a/Jgahp"
 
+declare global {
+  interface Window {
+    scrollTo(options?: ScrollToOptions): void;
+    scrollTo(x: number, y: number): void;
+  }
+}
+
+declare var document: Document;
+
 const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywordData}) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && document) {
+      (document.querySelector('meta[name=viewport]') as HTMLMetaElement).
+      setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, []);
   const router = useRouter();
+  
   const handleClickAbout = () => {
     router.push('/about')
   }

@@ -2,18 +2,9 @@ import styles from "./navigation-bar.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-import React, {useRef, useEffect} from "react";
+import React, {useRef} from "react";
 import type { NextPage } from "next";
 import { useRouter } from 'next/router'
-
-declare global {
-  interface Window {
-    scrollTo(options?: ScrollToOptions): void;
-    scrollTo(x: number, y: number): void;
-  }
-}
-
-declare var document: Document;
 
 const NavigationBar: NextPage = () => {
   const router = useRouter();
@@ -31,14 +22,6 @@ const NavigationBar: NextPage = () => {
       router.push(`/${searchQuery}`);
     }  
   }
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && document) {
-      (document.querySelector('meta[name=viewport]') as HTMLMetaElement).
-      setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }, []);
 
   return (
     <div className={styles.icroundArrowBackIosParent}>
