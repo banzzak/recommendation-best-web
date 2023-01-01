@@ -1,5 +1,6 @@
-import type { NextPage } from "next";
 import styles from "./footer.module.css";
+
+import type { NextPage } from "next";
 
 const Footer: NextPage = () => {
   return (

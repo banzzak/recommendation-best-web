@@ -10,6 +10,10 @@ const NavigationBar: NextPage = () => {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   
+  const handleClickBack = () => {
+    router.push('/');
+  }
+
   const onSearch = (event: React.FormEvent<HTMLFormElement>) => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault();
@@ -29,6 +33,7 @@ const NavigationBar: NextPage = () => {
         className={styles.icroundArrowBackIosIcon}
         alt=""
         src="../icroundarrowbackios.svg"
+        onClick={handleClickBack}
       />
       <form className="search-form" onSubmit={onSearch}>
         <button type="submit" className={styles.transparentButton}>

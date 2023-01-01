@@ -34,9 +34,8 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
   const router = useRouter();
   
   const handleClickAbout = () => {
-    router.push('/about')
+    router.push('/about');
   }
-  
   const title = `베스트 ${keyword} 추천`
   const metaDescription = `베스트 ${keyword} 쇼핑 추천 상품`
   let link = COUPANG_HOME_URL
