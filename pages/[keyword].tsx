@@ -4,7 +4,6 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { ParsedUrlQuery } from 'querystring'
 import NavigationBar from "../components/navigation-bar";
@@ -32,11 +31,7 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
       window.scrollTo({ top: 0, left:0, behavior: 'smooth' });
     }
   }, [hasSearchResult, keyword, recommendedKeywordData]);
-  const router = useRouter();
   
-  const handleClickAbout = () => {
-    router.push('/about');
-  }
   const buttonBackgroundColor = "transparent";
   const buttonFontColor = "grey";
   const title = `베스트 ${keyword} 추천`

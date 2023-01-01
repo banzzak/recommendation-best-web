@@ -7,13 +7,13 @@ import type { NextPage } from "next";
 import { useRouter } from 'next/router'
 
 const NavigationBar: NextPage = () => {
-  const router = useRouter();
-  const inputRef = useRef<HTMLInputElement>(null);
-  
   const handleClickBack = () => {
     router.push('/');
   }
-
+  
+  const router = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
+  
   const onSearch = (event: React.FormEvent<HTMLFormElement>) => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault();

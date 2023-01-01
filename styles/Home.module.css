@@ -133,6 +133,24 @@
 .searchBarWrapper {
   background-color: var(--bg);
 }
+.transparentButton {
+  position: absolute;
+  right: 0px;
+  top: 41%;
+  border: none;
+  background: none;
+  width: 0px;
+}
+
+.searchIcon {    
+    position: absolute;
+    top: 100%;
+    right: 40px;
+    margin-top: -10px;
+    flex-wrap: nowrap;
+    color: black;
+}
+
 .searchBarWrapper {
   position: absolute;
   top: 76px;

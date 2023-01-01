@@ -1,9 +1,30 @@
+import styles from "../styles/Home.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import Footer from "../components/footer";
 import WhatIsProjectR from "../components/what-is-project-r";
-import styles from "../styles/Home.module.css";
+import {useRef} from "react";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const onSearch = (event: React.FormEvent<HTMLFormElement>) => {
+    // Stop the form from submitting and refreshing the page.
+    event.preventDefault();
+    if (inputRef.current) {
+      inputRef.current.blur();
+    }
+
+    const searchQuery = event.currentTarget.searchQuery.value;
+    if (searchQuery) {
+      router.push(`/${searchQuery}`);
+    }  
+  }
+
   return (
     <div className={styles.narrowScreen}>
     <div className={styles.home}>
@@ -45,11 +66,13 @@ const Home: NextPage = () => {
         <img className={styles.rChild} alt="" src="../frame-7621.svg" />
       </div>
       <div className={styles.searchBarWrapper}>
-        <input
-          className={styles.searchBar}
-          type="text"
-          placeholder="쇼핑 키워드를 검색해보세요"
-        />
+        <form className="search-form" onSubmit={onSearch}>
+          <button type="submit" className={styles.transparentButton}>
+            <FontAwesomeIcon icon={faSearch} size="2x" className={styles.searchIcon}/>
+          </button>
+          <input type="text" placeholder="쇼핑 키워드를 검색해보세요." 
+          id="searchQuery" ref={inputRef} className={styles.searchBar}/>
+        </form>
       </div>
     </div>
     </div>
