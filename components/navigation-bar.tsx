@@ -13,6 +13,8 @@ declare global {
   }
 }
 
+declare var document: Document;
+
 const NavigationBar: NextPage = () => {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -31,14 +33,11 @@ const NavigationBar: NextPage = () => {
   }
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && document) {
+      (document.querySelector('meta[name=viewport]') as HTMLMetaElement).setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (typeof window !== 'undefined') {
-        document?.querySelector('html').style.transform = 'scale(1)';
-      }
     }
   }, []);
-
 
   return (
     <div className={styles.icroundArrowBackIosParent}>
