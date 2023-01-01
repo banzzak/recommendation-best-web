@@ -6,6 +6,7 @@ body {
 }
 :root {
   /* fonts */
+  --rb-body-bold1: Inter;
   --rb-heading3: Inter;
   --font-sf-pro-text: "SF Pro Text";
 
@@ -18,14 +19,12 @@ body {
 
   /* Colors */
   --bg: #f8f8f8;
-  --color-gray-100: #eee;
   --color-gray-200: #eee;
   --color-gray-300: #565656;
-  
+  --grey-900: #020202;
   --color-gray-500: rgba(0, 0, 0, 0.6);
   --color-gray-600: rgba(0, 0, 0, 0.5);
   --color-gray-700: rgba(0, 0, 0, 0.8);
-  --grey-900: #020202;
   --black: #000;
   --color-white: #fff;
 
@@ -46,6 +45,7 @@ body {
   --padding-md: 32px;
   --padding-lg: 40px;
   --padding-xl: 48px;
+  --padding-yl: 55.5px;
   --padding-2xl: 58px;
   --padding-3xl: 72px;
 
