@@ -8,10 +8,11 @@ import styles from "./what-is-project-r.module.css";
 type WhatIsProjectRType = {
   /** Style props */
   buttonBackgroundColor?: Property.BackgroundColor;
+  buttonFontColor?: Property.Color;
 };
 
 const WhatIsProjectR: NextPage<WhatIsProjectRType> = ({
-  buttonBackgroundColor,
+  buttonBackgroundColor, buttonFontColor
 }) => {
   const router = useRouter();
   const handleClickAbout = () => {
@@ -21,8 +22,9 @@ const WhatIsProjectR: NextPage<WhatIsProjectRType> = ({
   const buttonStyle: CSS.Properties = useMemo(() => {
     return {
       backgroundColor: buttonBackgroundColor,
+      color: buttonFontColor,
     };
-  }, [buttonBackgroundColor]);
+  }, [buttonBackgroundColor, buttonFontColor]);
 
   return (
     <div className={styles.whatisprojectr}>

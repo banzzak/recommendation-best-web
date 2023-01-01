@@ -29,7 +29,6 @@
   font-size: var(--rb-body-bold-size);
   line-height: 152%;
   font-family: var(--rb-body-bold1);
-  color: var(--bg);
   text-align: center;
   display: inline-block;
   width: 158px;
@@ -51,9 +50,10 @@
 }
 .button {
   cursor: pointer;
-  border: 0;
+  border: 1px solid;
   padding: var(--padding-3xs) var(--padding-2xs);
   background-color: var(--black);
+  border-color: var(--black);
   border-radius: var(--br-md);
   width: 280px;
   justify-content: center;

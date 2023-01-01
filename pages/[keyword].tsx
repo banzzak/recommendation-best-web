@@ -11,6 +11,7 @@ import NavigationBar from "../components/navigation-bar";
 
 import { KeywordData } from '../lib/schema'
 import clientPromise from '../lib/mongo'
+import WhatIsProjectR from "../components/what-is-project-r";
 
 const COUPANG_HOME_URL = "https://link.coupang.com/a/Jgahp"
 
@@ -36,6 +37,8 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
   const handleClickAbout = () => {
     router.push('/about');
   }
+  const buttonBackgroundColor = "transparent";
+  const buttonFontColor = "grey";
   const title = `베스트 ${keyword} 추천`
   const metaDescription = `베스트 ${keyword} 쇼핑 추천 상품`
   let link = COUPANG_HOME_URL
@@ -133,19 +136,7 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
                       </div>
                     </div>
                   </div>
-                  <div className={styles.groupParent}>
-                    <div className={styles.group}>
-                      <div
-                        className={styles.div7}
-                      >{`단 한 가지를 추천해드립니다. `}</div>
-                      <div className={styles.div8}>최고의 상품</div>
-                    </div>
-                    <button className={styles.button1} onClick={handleClickAbout}>
-                      <div className={styles.rWrapper}>
-                        <div className={styles.r1}>프로젝트 R 소개</div>
-                      </div>
-                    </button>
-                  </div>
+                  <WhatIsProjectR buttonBackgroundColor={buttonBackgroundColor} buttonFontColor={buttonFontColor}/>
                 </div>
               </div>
               <div className={styles.header}>

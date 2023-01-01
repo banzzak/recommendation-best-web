@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       <div className={styles.homeChild} />
       <div className={styles.footer}>
         <Footer />
-        <WhatIsProjectR buttonBackgroundColor="black" />
+        <WhatIsProjectR buttonBackgroundColor="black" buttonFontColor="white"/>
       </div>
       <div className={styles.frameParent}>
         <div className={styles.frameWrapper}>
