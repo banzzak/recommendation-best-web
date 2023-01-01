@@ -34,7 +34,6 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
   const router = useRouter();
   
   const handleClickAbout = () => {
-    router.re
     router.push('/about')
   }
   
