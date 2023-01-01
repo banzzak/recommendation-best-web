@@ -27,7 +27,7 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
   useEffect(() => {
     if (typeof window !== 'undefined' && document) {
       (document.querySelector('meta[name=viewport]') as HTMLMetaElement).
-      setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+      setAttribute('content', 'width=device-width, initial-scale=1.0');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       window.resizeTo(
         window.screen.availWidth,
