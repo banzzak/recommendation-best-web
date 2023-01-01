@@ -32,6 +32,7 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
       window.resizeTo(
         window.screen.availWidth,
         window.screen.availHeight);    
+      document.body.style.zoom = 'reset';  
     }
   }, [hasSearchResult, keyword, recommendedKeywordData]);
   const router = useRouter();
