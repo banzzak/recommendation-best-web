@@ -29,8 +29,11 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
       (document.querySelector('meta[name=viewport]') as HTMLMetaElement).
       setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.resizeTo(
+        window.screen.availWidth,
+        window.screen.availHeight);    
     }
-  }, []);
+  }, [hasSearchResult, keyword, recommendedKeywordData]);
   const router = useRouter();
   
   const handleClickAbout = () => {
