@@ -143,7 +143,7 @@ const DetailPage: NextPage<Props> = ({hasSearchResult, keyword, recommendedKeywo
                     </div>
                     <button className={styles.button1} onClick={handleClickAbout}>
                       <div className={styles.rWrapper}>
-                        <div className={styles.r1}>R 회사 소개</div>
+                        <div className={styles.r1}>프로젝트 R 소개</div>
                       </div>
                     </button>
                   </div>
