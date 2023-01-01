@@ -20,7 +20,7 @@ const AboutUs: NextPage = () => {
           <div className={styles.phsmileyThinWrapper}>
             <div className={styles.phsmileyThin}>
               <div className={styles.phsmileyThinChild} />
-              <img className={styles.vectorIcon} alt="" src="../vector.svg" />
+              <img className={styles.vectorIcon} alt="" src="../vector.svg"/>
             </div>
           </div>
           <div className={styles.r}>
@@ -110,7 +110,7 @@ const AboutUs: NextPage = () => {
         </div>
       </div>
       <div className={styles.r7}>
-        <img className={styles.rInner} alt="" src="../frame-7622.svg" />
+        <img className={styles.rInner} alt="" src="../frame-7622.svg" onClick={handleButtonClick}/>
       </div>
       </div>
     </div>
