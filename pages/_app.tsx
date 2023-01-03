@@ -3,9 +3,9 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
-import React from "react";
-import Head from "next/head";
-import type { AppProps } from "next/app";
+import React from 'react'
+import Head from 'next/head'
+import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Component {...pageProps} />
     </React.Fragment>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

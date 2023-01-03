@@ -1,6 +1,6 @@
-import styles from "./footer.module.css";
+import styles from './footer.module.css'
 
-import type { NextPage } from "next";
+import type { NextPage } from 'next'
 
 const Footer: NextPage = () => {
   return (
@@ -15,7 +15,7 @@ const Footer: NextPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
