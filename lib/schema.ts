@@ -1,8 +1,8 @@
 export type KeywordData = {
   keyword: string,
   preRendering: boolean,
-  recommendedItem:Item
-  searchedItems: [Item],
+  recommendedItem:Item,
+  //searchedItems: [Item],
 };
 
 export type Item = {

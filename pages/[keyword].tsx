@@ -267,14 +267,14 @@ const getKeywordData = async (keyword: string): Promise<KeywordData | null> => {
     return null
   }
   const preRendering = data.preRendering
-  const recommendedItem = data.recommendedItem
-  const searchedItems = data.searchedItems
+  const recommendedItem = data.recommendedItems.pop()
+  //const searchedItems = data.searchedItems
 
   const keywordData: KeywordData = {
     keyword,
     preRendering,
     recommendedItem,
-    searchedItems,
+    //searchedItems,
   }
   return keywordData
 }
