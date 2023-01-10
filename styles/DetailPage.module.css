@@ -93,6 +93,7 @@
   width: 328px;
   height: 333px;
   flex-shrink: 0;
+  border-radius: 5px;
   object-fit: cover;
 }
 .div3, .div4 {
