@@ -12,10 +12,12 @@ export type Item = {
   finalPrice: number,
   basePrice: number,
   imageUrl: string,
+  /*
   rating: {
     totalCount: number,
     avgRating:number,
     ratings:{},
   }
+  */
 }
 

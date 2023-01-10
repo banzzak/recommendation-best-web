@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 import { ParsedUrlQuery } from 'querystring'
 import NavigationBar from '../components/navigation-bar'
 
-import { KeywordData } from '../lib/schema'
+import { KeywordData, Item } from '../lib/schema'
 import clientPromise from '../lib/mongo'
 import WhatIsProjectR from '../components/what-is-project-r'
 
@@ -267,14 +267,19 @@ const getKeywordData = async (keyword: string): Promise<KeywordData | null> => {
     return null
   }
   const preRendering = data.preRendering
-  const recommendedItem = data.recommendedItems.pop()
-  //const searchedItems = data.searchedItems
-
+  const recommendedItemRaw = data.recommendedItems.pop()
+  const recommendedItem: Item = {
+    title: recommendedItemRaw['title'],
+    finalPrice: recommendedItemRaw['finalPrice'],
+    basePrice: recommendedItemRaw['basePrice'],
+    imageUrl: recommendedItemRaw['imageUrl'],
+    originalUrl: recommendedItemRaw['originalUrl'],
+    affiliateUrl: recommendedItemRaw['affiliateUrl'],
+  }
   const keywordData: KeywordData = {
     keyword,
     preRendering,
     recommendedItem,
-    //searchedItems,
   }
   return keywordData
 }
