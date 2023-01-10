@@ -1,6 +1,6 @@
 import styles from '../styles/DetailPage.module.css'
 
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -194,6 +194,8 @@ interface Params extends ParsedUrlQuery {
   keyword: string
 }
 
+/* For pre-rendering,
+
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   if (
     !process.env.PRERENDERING_ENABLED ||
@@ -212,14 +214,16 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<Props, Params> = async (
+//export const getStaticProps: GetStaticProps<Props, Params> = async (
+*/
+export const getServerSideProps: GetServerSideProps<Props, Params> = async (
   context,
 ) => {
   const keyword = context.params!.keyword
   const keywordData: KeywordData | null = await getKeywordData(keyword)
 
   if (!keywordData) {
-    // direct to found no recommendation  page
+    // direct to no recommendation found page
     return {
       props: {
         hasSearchResult: false,
