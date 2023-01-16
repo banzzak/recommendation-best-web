@@ -135,6 +135,11 @@
   background-color: var(--bg);
   outline-color: grey;
 }
+
+.searchBar:focus {
+  border-color: yellow;
+}
+
 .transparentButton {
   position: absolute;
   right: 0px;
