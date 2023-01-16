@@ -133,13 +133,11 @@
 .searchBar,
 .searchBarWrapper {
   background-color: var(--bg);
-  outline-color: grey;
 }
 
 .searchBar:focus {
   outline: none;
-  border-color: yellow;
-  box-shadow: 0 0 0 2px red;
+  border-color: lightslategrey;
 }
 
 .transparentButton {
