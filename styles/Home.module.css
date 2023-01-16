@@ -133,6 +133,7 @@
 .searchBar,
 .searchBarWrapper {
   background-color: var(--bg);
+  outline-color: grey;
 }
 .transparentButton {
   position: absolute;
