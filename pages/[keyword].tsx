@@ -83,7 +83,7 @@ const DetailPage: NextPage<Props> = ({
                         src="../pixelarticonsmoodsad.svg"
                       />
                       <div className={styles.wrapper}>
-                        <div className={styles.div}>
+                        <div className={styles.noKeywordDescription}>
                           현재 해당 키워드에 대한 추천 아이템이 없습니다. 선정이
                           완료되는 대로 업데이트하겠습니다. 감사합니다.
                         </div>

@@ -11,6 +11,9 @@
   display: inline-block;
   width: 284px;
 }
+.noKeywordDescription {
+  color: rgba(0, 0, 0, 0.6);
+}
 .wrapper {
   flex-direction: column;
 }
