@@ -64,7 +64,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className={styles.r}>
-          <img className={styles.rChild} alt="" src="../frame-7621.svg" />
+          <img className={styles.rChild} alt="" src="../R.png" />
         </div>
         <div className={styles.searchBarWrapper}>
           <form className="search-form" onSubmit={onSearch}>
