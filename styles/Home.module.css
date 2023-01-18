@@ -7,21 +7,14 @@
   object-fit: cover;
   z-index: 1;
 }
-.footer,
-.homeChild {
+.footer {
   position: absolute;
   left: 0;
   width: 360px;
-}
-.homeChild {
-  top: 422px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), transparent);
-  height: 117px;
-}
-.footer {
   top: 424px;
   height: 435px;
 }
+
 .div {
   position: relative;
   font-weight: 900;
@@ -50,14 +43,6 @@
   width: 162px;
   height: 159px;
   opacity: 0.04;
-}
-.groupItem {
-  position: absolute;
-  top: 178px;
-  left: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), transparent);
-  width: 360px;
-  height: 126px;
 }
 .frameParent,
 .headerChild {

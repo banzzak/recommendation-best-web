@@ -30,7 +30,7 @@
   position: absolute;
   top: 284px;
   left: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), transparent);
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   padding: var(--padding-xl) var(--padding-yl);

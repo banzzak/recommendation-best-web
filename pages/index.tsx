@@ -33,12 +33,11 @@ const Home: NextPage = () => {
           alt=""
           src="../untitled-artwork-8-1@2x.png"
         />
-        <div className={styles.homeChild} />
         <div className={styles.footer}>
           <Footer />
           <WhatIsProjectR
-            buttonBackgroundColor="black"
-            buttonFontColor="white"
+            buttonBackgroundColor="transparent"
+            buttonFontColor="grey"
           />
         </div>
         <div className={styles.frameParent}>
@@ -48,7 +47,6 @@ const Home: NextPage = () => {
             </div>
           </div>
           <img className={styles.groupChild} alt="" src="../frame-762.svg" />
-          <div className={styles.groupItem} />
         </div>
         <div className={styles.header}>
           <div className={styles.headerChild} />

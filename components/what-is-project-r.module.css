@@ -62,7 +62,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), transparent);
+  background: var(--bg);
   padding: var(--padding-3xl) var(--padding-lg);
   justify-content: flex-start;
   gap: var(--gap-xl);
